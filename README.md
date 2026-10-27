@@ -17,5 +17,11 @@ Os códigos deste repositório podem ser executados nas seguintes plataformas:
    ```
 
 ## 📂 Organização do Repositório
-- `/aulas`: Planos de aula e fundamentação teórica.
-- `/exercicios`: Desafios propostos em aula com resolução comentada.
+- **Aula 1:** Fundamentos, Variáveis, %TYPE, SELECT INTO.
+  - `/aulas/aula1.md`
+  - `/exercicios/aula1_exercicios.md`
+- **Aula 2:** Processamento em Lote com Cursores (Explícitos, FOR LOOP, SQL Dinâmico, FOR UPDATE).
+  - `/aulas/aula2.md`
+  - `/aulas/aula2_update.md`
+  - `/exercicios/aula2_exercicios.md`
+  - `/exercicios/aula2_update_exercicios.md`
