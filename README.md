@@ -9,19 +9,9 @@ Este repositório contém o material de apoio, planos de aula e exercícios para
 - **Metodologia:** Foco 100% em aplicação prática, usando analogias de fácil compreensão e resolução de problemas corporativos.
 
 ## 🛠️ Setup do Ambiente
-Os códigos deste repositório podem ser executados nas seguintes plataformas:
-1. **[FreeSQL](https://freesql.com/):** Ambiente web limpo para execução rápida sem necessidade de infraestrutura.
-2. **Docker / WSL (Oracle 23c Free):** Padrão corporativo sugerido para simulação real de ambiente.
-   ```bash
-   docker run -d --name oracle-db -p 1521:1521 -e ORACLE_PASSWORD=SuaSenha gvenzl/oracle-free
-   ```
+1. **[FreeSQL](https://freesql.com/):** Ambiente web limpo para execução rápida.
+2. **Docker / WSL (Oracle 23c Free):** Padrão corporativo.
 
 ## 📂 Organização do Repositório
 - **Aula 1:** Fundamentos, Variáveis, %TYPE, SELECT INTO.
-  - `/aulas/aula1.md`
-  - `/exercicios/aula1_exercicios.md`
-- **Aula 2:** Processamento em Lote com Cursores (Explícitos, FOR LOOP, SQL Dinâmico, FOR UPDATE).
-  - `/aulas/aula2.md`
-  - `/aulas/aula2_update.md`
-  - `/exercicios/aula2_exercicios.md`
-  - `/exercicios/aula2_update_exercicios.md`
+- **Aula 2:** Exceções (NO_DATA_FOUND, TOO_MANY_ROWS), Cursores, SQL Dinâmico e Atualização em Lote (FOR UPDATE).
