@@ -14,9 +14,10 @@ Este repositório contém o material de apoio, planos de aula e exercícios para
 | **Aula 1** | Fundamentos, Blocos Anônimos, Variáveis, `%TYPE`, `IF/ELSIF`, `SELECT INTO` | 3h | ✅ Concluída |
 | **Aula 2** | Exceções (`NO_DATA_FOUND`, `TOO_MANY_ROWS`), Cursores, SQL Dinâmico, `FOR UPDATE` | 3h | ✅ Concluída |
 | **Aula 3** | Procedures (`IN`/`OUT`), Primary Key, Functions (`SELECT`/`UPDATE`), Múltiplos Retornos | 3h | ✅ Concluída |
-| **Total Realizado** | **9 horas concluídas** *(Restam 19 horas para atingir o teto de 28h)* | **9h / 28h** | 🔄 Em andamento |
+| **Aula 4** | Modelagem Relacional, Packages (`SPEC`/`BODY`), Triggers (`BEFORE`/`AFTER`, `:OLD`/`:NEW`), `RAISE_APPLICATION_ERROR` | 3h | ✅ Concluída |
+| **Total Realizado** | **12 horas concluídas** *(Restam 16 horas para atingir o teto de 28h)* | **12h / 28h** | 🔄 Em andamento |
 
-*(Sugestão para as 19h restantes: 5 encontros de 3h + 1 encontro final de 4h para Projeto Prático)*
+*(Sugestão para as 16h restantes: 4 encontros de 3h + 1 encontro final de 4h para Projeto Prático)*
 
 ## 🛠️ Setup do Ambiente
 1. **[FreeSQL](https://freesql.com/):** Ambiente web limpo para execução rápida.
@@ -33,3 +34,5 @@ Este repositório contém o material de apoio, planos de aula e exercícios para
   - `/exercicios/aula2_exercicios.md` | `/exercicios/aula2_update_exercicios.md`
 - **Aula 3:** Procedures, Integridade com Primary Key e Functions Avançadas
   - `/aulas/aula3.md` | `/exercicios/aula3_exercicios.md`
+- **Aula 4:** Packages, Triggers de Auditoria e Blindagem de Regras de Negócio (Cenário Moveleiro)
+  - `/aulas/aula4.md` | `/exercicios/aula4_exercicios.md`
