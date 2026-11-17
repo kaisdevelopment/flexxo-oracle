@@ -16,9 +16,10 @@ Este repositório contém o material de apoio, planos de aula e exercícios para
 | **Aula 3** | Procedures (`IN`/`OUT`), Primary Key, Functions (`SELECT`/`UPDATE`), Múltiplos Retornos | 3h | ✅ Concluída |
 | **Aula 4** | Modelagem Relacional, Packages (`SPEC`/`BODY`), Triggers (`BEFORE`/`AFTER`, `:OLD`/`:NEW`), `RAISE_APPLICATION_ERROR` | 3h | ✅ Concluída |
 | **Aula 5** | Triggers Multi-Eventos, `PRAGMA AUTONOMOUS_TRANSACTION`, `ORA-04091`, `BULK COLLECT` e Árvores Hierárquicas (`CONNECT BY`) | 3h | ✅ Concluída |
-| **Total Realizado** | **15 horas concluídas** *(Restam 13 horas para atingir o teto de 28h)* | **15h / 28h** | 🔄 Em andamento |
+| **Aula 6** | Gravação em Lote (`FORALL` + `SAVE EXCEPTIONS`), `COMPOUND TRIGGER`, JSON Nativo (`JSON_OBJECT`) e Integração de Alertas com n8n | 3h | ✅ Concluída |
+| **Total Realizado** | **18 horas concluídas** *(Restam 10 horas para atingir o teto de 28h)* | **18h / 28h** | 🔄 Em andamento |
 
-*(Sugestão para as 13h restantes: 3 encontros de 3h + 1 encontro final de 4h para Projeto Prático)*
+*(Sugestão para as 10h restantes: 2 encontros de 3h + 1 encontro final de 4h para Projeto Prático)*
 
 ## 🛠️ Setup do Ambiente
 1. **[FreeSQL](https://freesql.com/):** Ambiente web limpo para execução rápida.
@@ -39,3 +40,5 @@ Este repositório contém o material de apoio, planos de aula e exercícios para
   - `/aulas/aula4.md` | `/exercicios/aula4_exercicios.md`
 - **Aula 5:** Triggers Avançadas, Transações Autônomas, Alta Performance (`BULK COLLECT`) e Explosão de Engenharia (BOM)
   - `/aulas/aula5.md` | `/exercicios/aula5_exercicios.md`
+- **Aula 6:** Processamento em Massa (`FORALL`), Compound Triggers, Geração de JSON Nativo e Automação com n8n
+  - `/aulas/aula6.md` | `/exercicios/aula6_exercicios.md`
