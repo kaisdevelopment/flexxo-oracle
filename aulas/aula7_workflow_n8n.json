@@ -1,0 +1,120 @@
+{
+  "name": "Aula 7 - Formulário Engenharia para Oracle MERGE INTO",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "catalogo-moveis",
+        "formTitle": "Engenharia de Móveis — Carga no Catálogo Oracle",
+        "formDescription": "Cadastre um lançamento ou atualize preço/estoque para gerar o payload JSON do MERGE INTO.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "ID do Móvel",
+              "fieldType": "number",
+              "placeholder": "Ex: 101 (atualizar) ou 107 (novo)",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "ID da Linha (1-Cozinha, 2-Dormitório, 3-Office)",
+              "fieldType": "number",
+              "placeholder": "1, 2 ou 3",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Descrição do Móvel",
+              "placeholder": "Ex: Rack Sala 180cm Freijó",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Preço de Custo",
+              "fieldType": "number",
+              "placeholder": "Ex: 650",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Preço de Venda",
+              "fieldType": "number",
+              "placeholder": "Ex: 1390",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Estoque (Entrada)",
+              "fieldType": "number",
+              "placeholder": "Ex: 10",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a7000001-0001-4000-8000-000000000001",
+      "name": "Formulário Engenharia",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        220,
+        300
+      ],
+      "webhookId": "catalogo-moveis"
+    },
+    {
+      "parameters": {
+        "jsCode": "const form = $input.first().json;\n\nconst item = {\n  id: Number(form['ID do Móvel']),\n  id_linha: Number(form['ID da Linha (1-Cozinha, 2-Dormitório, 3-Office)']),\n  descricao: String(form['Descrição do Móvel']).trim(),\n  preco_custo: Number(form['Preço de Custo']),\n  preco_venda: Number(form['Preço de Venda']),\n  estoque: Number(form['Estoque (Entrada)'])\n};\n\nconst margem = Number((item.preco_venda - item.preco_custo).toFixed(2));\nconst jsonPayload = JSON.stringify([item]);\nconst jsonEscapado = jsonPayload.replace(/'/g, \"''\");\n\nconst comandoPlsql = `BEGIN\n  prc_sincronizar_catalogo_json('${jsonEscapado}');\nEND;\n/`;\n\nreturn [{\n  json: {\n    ...item,\n    margem_bruta: margem,\n    status_margem: margem >= 0 ? 'APROVADO' : 'ABAIXO DO CUSTO',\n    json_payload: jsonPayload,\n    comando_plsql: comandoPlsql\n  }\n}];"
+      },
+      "id": "a7000001-0002-4000-8000-000000000002",
+      "name": "Montar JSON e PL/SQL",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "remetente@empresa.com.br",
+        "toEmail": "engenharia@empresa.com.br",
+        "subject": "=[CARGA ORACLE] Móvel #{{ $json.id }} - {{ $json.descricao }} ({{$json.status_margem }})",
+        "emailFormat": "text",
+        "text": "=Nova carga recebida via Formulário da Engenharia:\n\n• Móvel: [{{ $json.id }}] {{$json.descricao }}\n• Margem Bruta: R$ {{ $json.margem_bruta }} ({{$json.status_margem }})\n\n--- JSON GERADO ---\n{{ $json.json_payload }}\n\n--- COMANDO PRONTO PARA O FREESQL ---\n{{$json.comando_plsql }}",
+        "options": {}
+      },
+      "id": "a7000001-0003-4000-8000-000000000003",
+      "name": "Enviar Carga por E-mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        740,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Formulário Engenharia": {
+      "main": [
+        [
+          {
+            "node": "Montar JSON e PL/SQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar JSON e PL/SQL": {
+      "main": [
+        [
+          {
+            "node": "Enviar Carga por E-mail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
