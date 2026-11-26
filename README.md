@@ -1,6 +1,6 @@
 # Curso Prático de Oracle PL/SQL Corporativo
 
-Este repositório contém o material de apoio, planos de aula, fluxos de integração e exercícios para o treinamento prático focado em desenvolvimento Oracle PL/SQL. O objetivo é capacitar profissionais de TI para atuar em cenários reais de mercado (integrações, validações de negócio e automação de rotinas).
+Este repositório contém o material de apoio, planos de aula, fluxos de integração e exercícios para o treinamento prático focado em desenvolvimento Oracle PL/SQL. O objetivo é capacitar profissionais de TI para atuar em cenários reais de mercado (integrações, validações de negócio, tunning e automação de rotinas).
 
 ## 📌 Estrutura e Controle de Carga Horária
 - **Carga Horária Total Contratada:** 28 horas
@@ -18,9 +18,9 @@ Este repositório contém o material de apoio, planos de aula, fluxos de integra
 | **Aula 5** | Triggers Multi-Eventos, `PRAGMA AUTONOMOUS_TRANSACTION`, `ORA-04091`, `BULK COLLECT` e Árvores Hierárquicas (`CONNECT BY`) | 3h | ✅ Concluída |
 | **Aula 6** | Gravação em Lote (`FORALL` + `SAVE EXCEPTIONS`), `COMPOUND TRIGGER`, JSON Nativo (`JSON_OBJECT`) e Integração de Alertas com n8n | 3h | ✅ Concluída |
 | **Aula 7** | Integração Corporativa: `JSON_TABLE` (`NESTED PATH`), Upsert com `MERGE INTO`, `SYS_REFCURSOR` e Formulário Web n8n ➔ Oracle | 3h | ✅ Concluída |
-| **Total Realizado** | **22 horas concluídas** *(Restam 6 horas para atingir o teto de 28h)* | **22h / 28h** | 🔄 Em andamento |
-
-*(Planejamento para as 6h restantes: 2 encontros finais de 3h — fechamento de tópicos avançados + Projeto Prático Integrado)*
+| **Aula 8** | SQL Tuning (`EXPLAIN PLAN`, Índices e Function-Based Index), Gerador de Massa (`CONNECT BY LEVEL`), Window Functions (`DENSE_RANK`, `LAG`, `OVER`) e Cirurgia de Erros (`BACKTRACE` + `SAVEPOINT`) | 3h | ✅ Concluída |
+| **Aula 9** | **Projeto Prático Final:** Mini-ERP Moveleiro Consolidado (Arquitetura Completa) | 3h | 🔜 Próxima Aula |
+| **Total Realizado** | **25 horas concluídas** *(Restam 3 horas para atingir o teto de 28h)* | **25h / 28h** | 🔄 Em andamento |
 
 ## 🛠️ Setup do Ambiente
 1. **[FreeSQL](https://freesql.com/):** Ambiente web limpo para execução rápida.
@@ -45,3 +45,5 @@ Este repositório contém o material de apoio, planos de aula, fluxos de integra
   - `/aulas/aula6.md` | `/exercicios/aula6_exercicios.md`
 - **Aula 7:** Ingestão de JSON (`JSON_TABLE`), Upsert (`MERGE INTO`), Listas Dinâmicas (`SYS_REFCURSOR`) e Fluxo Formulário n8n ➔ Oracle
   - `/aulas/aula7.md` | `/aulas/aula7_workflow_n8n.json` | `/exercicios/aula7_exercicios.md`
+- **Aula 8:** SQL Tuning (`EXPLAIN PLAN` e Índices), Funções Analíticas (Window Functions) e Cirurgia de Erros (`BACKTRACE` + `SAVEPOINT`)
+  - `/aulas/aula8.md` | `/exercicios/aula8_exercicios.md`
